@@ -15,7 +15,10 @@ map("n", "<A-h>", "<C-w><C-h>")
 -- map("n", "<C-j>", ":move '>+1<CR>gv-gv")
 -- map("n", "<C-k>", ":move '<-2<CR>gv-gv")
 -- map("v", "<C-j>", ":move '>+1<CR>gv-gv")
--- map("v", "<C-k>", ":move '<-2<CR>gv-gv")
+-- map("v", "<c-k>", ":move '<-2<cr>gv-gv")
+
+-- FzF commands history
+map("c", "<c-r>", ":FzfLua command_history")
 
 -- ToggleTerm
 function _G.set_terminal_keymaps()

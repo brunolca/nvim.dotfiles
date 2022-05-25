@@ -71,6 +71,14 @@ return require("packer").startup({
       'projekt0n/github-nvim-theme',
     })
 
+    -- Tmux support.
+    use({
+    "aserowy/tmux.nvim",
+    config = function()
+        require('plugins.tmux')
+    end
+})
+
     use({
       'ggandor/lightspeed.nvim',
       "tpope/vim-sleuth",

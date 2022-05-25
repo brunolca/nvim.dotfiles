@@ -1,3 +1,6 @@
+
+vim.o.termguicolors = true
+
 -- Hide ~ from end of lines.
 vim.opt.fillchars = { eob = " " }
 

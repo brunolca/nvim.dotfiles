@@ -14,7 +14,7 @@ g.nvim_tree_highlight_opened_files = 0 -- Will enable folder and file icon highl
 g.nvim_tree_add_trailing = 0 -- Append a trailing slash to folder names. ]]
 
 local nvimtree_config = {
-  open_on_tab = false,
+  open_on_tab = true,
   update_cwd = true,
   disable_netrw = true,
   hijack_netrw = true,
@@ -22,10 +22,10 @@ local nvimtree_config = {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = "!",
+      info = "i",
+      warning = "!",
+      error = "x",
     },
   },
   git = {
@@ -47,13 +47,11 @@ local nvimtree_config = {
     },
   },
   view = {
-    width = math.floor(vim.fn.winwidth(0) * 0.15), -- Finding 15% of windows width.
+    width = vim.fn.winwidth(0),
     side = "left",
     preserve_window_proportions = false,
     mappings = {
       list = {
-        { key = "<S-h>", cb = ":call ResizeLeft(3)<CR>" },
-        { key = "<C-h>", cb = tree_cb("toggle_dotfiles") },
       },
     },
   },
@@ -65,7 +63,7 @@ local nvimtree_config = {
       restrict_above_cwd = false,
     },
     open_file = {
-      quit_on_open = false,
+      quit_on_open = true,
       resize_window = false,
       window_picker = {
         enable = true,

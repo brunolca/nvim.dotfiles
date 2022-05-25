@@ -95,12 +95,7 @@ which_key.register({
 -- NvimTree
 if is_plugin_installed("nvim-tree.lua") then
   which_key.register({
-    n = {
-      name = "NvimTree",
-      t = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
-      f = { ":NvimTreeFocus<CR>", "Focus on NvimTree" },
-      e = { ":lua nt_explorer()<CR>", "Fullscreen Explorer" },
-    },
+    n = { ":lua nt_explorer()<CR>", "NvimTree Explorer" },
   }, { prefix = "<leader>" })
 end
 

@@ -11,7 +11,7 @@ vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
 
 -- Decrease time of completion menu.
-opt.updatetime = 300
+opt.updatetime = 200
 
 -- Set cursorhold updatetime(:  .
 vim.g.cursorhold_updatetime = 100
@@ -130,16 +130,6 @@ if vim.fn.index(vim.fn.argv(), ".") >= 0 then
     end,
   })
   vim.cmd("bd1")
-elseif vim.fn.len(vim.fn.argv()) == 0 then
-  autocmd("VimEnter", {
-    pattern = "*",
-    callback = function()
-      if is_plugin_installed("alpha-nvim") == true then
-        vim.cmd("Alpha")
-        vim.cmd("bd 1")
-      end
-    end,
-  })
 end
 
 -- Defining CodeArtUpdate commands.
@@ -147,24 +137,11 @@ vim.api.nvim_create_user_command("CodeArtUpdate", function()
   require("utils").update()
 end, { nargs = 0 })
 
--- NOTE: Set your shell to powershell because of :CodeArtUpdate command and
--- other problems with cmd in Windows.
-vim.cmd([[
-if has("win32")
-  set shell=powershell " Set shell to powershell.
-  let &shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-  let &shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-  let &shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-  set shellquote= shellxquote=
-endif
-]])
-
 -- Creating CodeArtTransparent command.
 vim.api.nvim_create_user_command("CodeArtTransparent", "lua make_codeart_transparent()", { nargs = 0 })
 
 -- Add/Diasable cursorline and statusline in some buffers and filetypes.
 statusline_hide = {
-  "alpha",
   "TelescopePrompt",
   "TelescopeResults",
   "packer",

@@ -47,7 +47,7 @@ local which_key_config = {
     ["<c>"] = "CTR",
   },
   window = {
-    border = "single", -- none, single, double, shadow
+    border = "shadow", -- none, single, double, shadow
     position = "bottom", -- bottom, top
     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
@@ -61,11 +61,11 @@ if is_plugin_installed("packer.nvim") then
   which_key.register({
     p = {
       name = "Packer",
-      i = { ":PackerInstall<CR>", "Install CodeArt packages" },
-      u = { ":PackerUpdate<CR>", "Update CodeArt packages" },
-      r = { ":PackerClean<CR>", "Uninstall unnecessary CodeArt packages" },
-      s = { ":PackerSync<CR>", "Sync CodeArt packages" },
-      c = { ":PackerCompile<CR>", "Compile CodeArt packages" },
+      i = { ":PackerInstall<CR>", "Install packages" },
+      u = { ":PackerUpdate<CR>", "Update packages" },
+      r = { ":PackerClean<CR>", "Uninstall unnecessary packages" },
+      s = { ":PackerSync<CR>", "Sync packages" },
+      c = { ":PackerCompile<CR>", "Compile packages" },
     },
   }, { prefix = "<leader>" })
 end

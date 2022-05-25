@@ -221,7 +221,7 @@ local fzf_lua_config = {
   },
   -- provider setup
   files = {
-    -- previewer      = "bat",          -- uncomment to override previewer
+    previewer      = "bat",          -- uncomment to override previewer
                                         -- (name from 'previewers' table)
                                         -- set to 'false' to disable
     prompt            = 'Files> ',
@@ -335,7 +335,7 @@ local fzf_lua_config = {
     -- executed command priority is 'cmd' (if exists)
     -- otherwise auto-detect prioritizes `rg` over `grep`
     -- default options are controlled by 'rg|grep_opts'
-    -- cmd            = "rg --vimgrep",
+    cmd            = "rg --vimgrep",
     grep_opts         = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
     rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=512",
     -- set to 'true' to always parse globs in both 'grep' and 'live_grep'
@@ -405,7 +405,7 @@ local fzf_lua_config = {
     },
   },
   lines = {
-    previewer         = "builtin",    -- set to 'false' to disable
+    previewer         = "bat",    -- set to 'false' to disable
     prompt            = 'Lines> ',
     show_unlisted     = false,        -- exclude 'help' buffers
     no_term_buffers   = true,         -- exclude 'term' buffers
@@ -423,7 +423,7 @@ local fzf_lua_config = {
     },
   },
   blines = {
-    previewer         = "builtin",    -- set to 'false' to disable
+    previewer         = "bat",    -- set to 'false' to disable
     prompt            = 'BLines> ',
     show_unlisted     = true,         -- include 'help' buffers
     no_term_buffers   = false,        -- include 'term' buffers
@@ -458,7 +458,7 @@ local fzf_lua_config = {
     no_header_i           = false,    -- hide interactive header?
   },
   btags = {
-    prompt                = 'BTags❯ ',
+    prompt                = 'BTags> ',
     ctags_file            = "tags",
     multiprocess          = true,
     file_icons            = true,
